@@ -4,7 +4,7 @@
 *NOTICE*: `testrpc` is now `ganache-cli`. Use it just as you would `testrpc`.
 
 <p align="center">
-  <img src="https://github.com/moxiesuite/ganache-cli/blob/ganache-cli/resources/icons/ganache-cli-128x128.png?raw=true">
+  <img src="https://github.com/moxiesuite/ganache-cli/raw/6.1.0-moxie/resources/icons/ganache-cli-128x128.png">
 </p>
 
 ## Welcome to Ganache CLI
