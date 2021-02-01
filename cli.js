@@ -6,12 +6,12 @@ require('source-map-support/register')
 // `yargs/yargs` required to work with webpack, see here.
 // https://github.com/yargs/yargs/issues/781
 var yargs = require('yargs/yargs');
-var Ganache = require("ganache-core");
+var Ganache = require("@moxiesuite/ganache-core");
 var pkg = require("./package.json");
-var corepkg = require("./node_modules/ganache-core/package.json");
+var corepkg = require("./node_modules/@moxiesuite/ganache-core/package.json");
 var URL = require("url");
 var fs = require("fs");
-var to = require("ganache-core/lib/utils/to");
+var to = require("@moxiesuite/ganache-core/lib/utils/to");
 
 var parser = yargs()
 .option("unlock", {
@@ -23,14 +23,14 @@ var argv = parser.parse(process.argv);
 
 if (argv.help || argv['?']) {
   console.log("");
-  console.log("ganache-cli: Fast Ethereum RPC client for testing and development");
-  console.log("  Full docs: https://github.com/trufflesuite/ganache-cli");
+  console.log("ganache-cli: Fast Vapory RPC client for testing and development");
+  console.log("  Full docs: https://github.com/moxiesuite/ganache-cli");
   console.log("");
   console.log("Usage: ganache-cli [options]");
   console.log("  options:");
   console.log("  --port/-p <port to bind to, default 8545>");
   console.log("  --host/-h <host to bind to, default 127.0.0.1>");
-  console.log("  --fork/-f <url>   (Fork from another currently running Ethereum client at a given block)");
+  console.log("  --fork/-f <url>   (Fork from another currently running Vapory client at a given block)");
   console.log("");
   console.log("  --db <db path>   (directory to save chain db)");
   console.log("  --seed/-s <seed value for PRNG, default random>");
@@ -38,7 +38,7 @@ if (argv.help || argv['?']) {
   console.log("  --mnemonic/-m <mnemonic>");
   console.log("");
   console.log("  --accounts/-a <number of accounts to generate at startup>   (ignored when using --account flag)");
-  console.log("  --defaultBalanceEther/-e <Amount of ether to assign each test account, default 100.0>   (ignored when using --account flag)");
+  console.log("  --defaultBalanceVapor/-e <Amount of vapor to assign each test account, default 100.0>   (ignored when using --account flag)");
   console.log("  --account <privatekey>,<balance>   (Can be specified multiple times. Note that private keys are 64 characters long,");
   console.log("                                       and must be input as a 0x-prefixed hex string. Balance can either be input as an");
   console.log("                                       integer or 0x-prefixed hex value specifying the amount of wei in that account.)");
@@ -47,7 +47,7 @@ if (argv.help || argv['?']) {
   console.log("  --secure/-n   (Lock accounts by default)");
   console.log("  --unlock <accounts>   (Comma-separated list of accounts or indices to unlock)");
   console.log("");
-  console.log("  --noVMErrorsOnRPCResponse   (Do not transmit transaction failures as RPC errors. Enable this flag for error reporting behaviour which is compatible with other clients such as geth and Parity.)");
+  console.log("  --noVMErrorsOnRPCResponse   (Do not transmit transaction failures as RPC errors. Enable this flag for error reporting behaviour which is compatible with other clients such as gvap and Parity.)");
   console.log("");
   console.log("  --blockTime/-b <block time in seconds> (Will instamine if option omitted. Avoid using unless your test cases require interval mining.)");
   console.log("  --networkId/-i <network id> (default current time)");
@@ -114,7 +114,7 @@ var options = {
   seed: argv.s || argv.seed,
   mnemonic: argv.m || argv.mnemonic,
   total_accounts: argv.a || argv.accounts,
-  default_balance_ether: argv.e || argv.defaultBalanceEther,
+  default_balance_vapor: argv.e || argv.defaultBalanceVapor,
   blockTime: argv.b || argv.blockTime,
   gasPrice: argv.g || argv.gasPrice,
   gasLimit: argv.l || argv.gasLimit,
