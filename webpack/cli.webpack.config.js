@@ -17,7 +17,8 @@ module.exports = applyBaseConfig({
   },
   module: {
     rules: [
-      { test: /\.js$/, use: "shebang-loader" }
+      { test: /\.js$/, use: "shebang-loader" },
+      {test: /\.node$/, use: 'node-loader'},
     ]
   },
   plugins: [

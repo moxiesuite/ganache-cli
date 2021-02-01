@@ -4,7 +4,7 @@
 *NOTICE*: `testrpc` is now `ganache-cli`. Use it just as you would `testrpc`.
 
 <p align="center">
-  <img src="https://github.com/ethereumjs/testrpc/blob/ganache-cli/resources/icons/ganache-cli-128x128.png?raw=true">
+  <img src="https://github.com/moxiesuite/ganache-cli/blob/ganache-cli/resources/icons/ganache-cli-128x128.png?raw=true">
 </p>
 
 ## Welcome to Ganache CLI
@@ -21,7 +21,7 @@ If you came here expecting to find the TestRPC, you're in the right place! Moxie
 `ganache-cli` is written in Javascript and distributed as a Node package via `npm`. Make sure you have Node.js (>= v6.11.5) installed.
 
 ```Bash
-npm install -g ganache-cli
+npm install -g @moxiesuite/ganache-cli
 ```
 
 Having problems? Be sure to check out the [FAQ](https://github.com/moxiesuite/ganache-cli/wiki/FAQ) and if you're still having issues and you're sure its a problem with `ganache-cli` please open an issue.
