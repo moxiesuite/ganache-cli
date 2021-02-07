@@ -1,5 +1,5 @@
-var Provider = require("ganache-core/lib/provider");
-var Server = require("ganache-core/lib/server");
+var Provider = require("@moxiesuite/ganache-core/lib/provider");
+var Server = require("@moxiesuite/ganache-core/lib/server");
 
 // This interface exists so as not to cause breaking changes.
 module.exports = {

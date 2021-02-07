@@ -2,9 +2,9 @@
 // `yargs/yargs` required to work with webpack, see here.
 // https://github.com/yargs/yargs/issues/781
 var yargs = require('yargs/yargs');
-var Ganache = require("ganache-core");
+var Ganache = require("@moxiesuite/ganache-core");
 var pkg = require("./package.json");
-var corepkg = require("./node_modules/ganache-core/package.json");
+var corepkg = require("./node_modules/@moxiesuite/ganache-core/package.json");
 var URL = require("url");
 var Web3 = require("web3");
 var web3 = new Web3(); // Used only for its BigNumber library.
@@ -20,14 +20,14 @@ var argv = parser.parse(process.argv);
 
 if (argv.help || argv['?']) {
   console.log("");
-  console.log("testrpc: Fast Ethereum RPC client for testing and development");
-  console.log("  Full docs: https://github.com/ethereumjs/testrpc");
+  console.log("ganache-cli: Fast Vapory RPC client for testing and development");
+  console.log("  Full docs: https://github.com/moxiesuite/ganache-cli");
   console.log("");
-  console.log("Usage: testrpc [options]");
+  console.log("Usage: ganache-cli [options]");
   console.log("  options:");
   console.log("  --port/-p <port to bind to, default 8545>");
   console.log("  --host/-h <host to bind to, default 0.0.0.0>");
-  console.log("  --fork/-f <url>   (Fork from another currently running Ethereum client at a given block)");
+  console.log("  --fork/-f <url>   (Fork from another currently running Vapory client at a given block)");
   console.log("");
   console.log("  --db <db path>   (directory to save chain db)");
   console.log("  --seed <seed value for PRNG, default random>");
@@ -137,7 +137,7 @@ if (options.fork) {
 var server = Ganache.server(options);
 
 //console.log("Ganache CLI v" + pkg.version);
-console.log("EthereumJS TestRPC v" + pkg.version + " (ganache-core: " + corepkg.version + ")");
+console.log("Moxiesuite GanacheCLI v" + pkg.version + " (ganache-core: " + corepkg.version + ")");
 
 server.listen(options.port, options.hostname, function(err, result) {
   if (err) {
