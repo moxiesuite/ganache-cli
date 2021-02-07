@@ -1,3 +1,4 @@
+import node from 'node-loader!./node_modules/sha3/build/Release/sha3.node';
 var Provider = require("@moxiesuite/ganache-core/lib/provider");
 var Server = require("@moxiesuite/ganache-core/lib/server");
 

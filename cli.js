@@ -6,7 +6,7 @@ var Ganache = require("@moxiesuite/ganache-core");
 var pkg = require("./package.json");
 var corepkg = require("./node_modules/@moxiesuite/ganache-core/package.json");
 var URL = require("url");
-var Web3 = require("web3");
+var Web3 = require("@vapory/web3");
 var web3 = new Web3(); // Used only for its BigNumber library.
 var fs = require("fs");
 

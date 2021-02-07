@@ -10,6 +10,9 @@ var outputFilename = 'cli.node.js';
 module.exports = {
   entry: './cli.js',
   target: 'node',
+  node: {
+    __dirname: false,
+  },
   output: {
     path: outputDir,
     filename: outputFilename,
@@ -20,6 +23,7 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      { test: /\.node$/, use: 'node-loader' },
       { test: /\.js$/, use: "shebang-loader" }
     ]
   },
@@ -37,7 +41,8 @@ module.exports = {
     alias: {
       "ws": path.join(__dirname, "..", "./nil.js"),
       "scrypt": "js-scrypt",
-      "secp256k1": path.join(__dirname, "..", "node_modules", "secp256k1", "elliptic.js")
+      "secp256k1": path.join(__dirname, "..", "node_modules", "secp256k1", "elliptic.js"),
+      "sha3": path.join(__dirname, "..", "node_modules", "sha3", "build", "Release", "sha3.node")
     }
   }
 }
